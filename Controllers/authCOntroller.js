@@ -14,8 +14,14 @@ export const register = async(req,res,next)=>{
             password:hash
         });
         await newUser.save();
-        res.status(200).json({"message":true})
+        res.status(200).json({"message":true});
     } catch (error) {
-        next(error);
+        console.log(error);
     }
+}
+
+// Login Controller
+
+export const login = ()=>{
+
 }
