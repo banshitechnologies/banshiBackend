@@ -2,13 +2,15 @@ import  Express  from "express";
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import cors from "cors";
-import authRoute from './Routes/authRoute.js'
+import authRoute from './Routes/authRoute.js';
+import cookieParser from "cookie-parser";
 const app = Express();
 dotenv.config();
 const port = 5000;
 app.use(Express.json());
 app.use(cors());
 app.use(Express.urlencoded({ extended: true }));
+app.use(cookieParser());
 // DB connection
 const connect = async()=>{
     try {
