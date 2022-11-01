@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import cors from "cors";
 import authRoute from './Routes/authRoute.js';
+import packageroute from './Routes/packagesroutes.js';
 import cookieParser from "cookie-parser";
 const app = Express();
 dotenv.config();
@@ -29,7 +30,8 @@ mongoose.connection.on("disconnected", () => {
 
 
 // Creating Root Routing
-app.use('/api/auth',authRoute)
+app.use('/api/auth',authRoute);
+app.use('/api/packages',packageroute);
 
 // connecting to server
 app.listen(port,()=>{
