@@ -11,5 +11,6 @@ const packegesScheema = new mongoose.Schema({
             type: [Object],
         },
     
-})
+},
+{ timestamps: true })
 export default mongoose.model("Package", packegesScheema);
