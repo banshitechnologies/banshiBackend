@@ -1,4 +1,5 @@
 import  Express  from "express";
+import Razorpay from 'razorpay'
 import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import cors from "cors";
@@ -22,6 +23,12 @@ const connect = async()=>{
     }
 }
 
+// Razor pay instance
+
+export const instance = new Razorpay({
+    key_id: process.env.RAZORPAY_API_KEY,
+    key_secret: process.env.RAZORPAY_SECRET_KEY
+  });
 
 // Disconnected Message Mongodb
 mongoose.connection.on("disconnected", () => {
